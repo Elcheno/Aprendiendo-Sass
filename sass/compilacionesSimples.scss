@@ -1,0 +1,19 @@
+$white: rgb(255, 255, 255);
+$lightblue: rgb(172, 168, 226);
+$darkblue: rgb(1, 1, 129);
+$v100: 100%;
+$v50: 50%;
+
+body{
+    background-color: $lightblue;
+    .wrapper{
+        width: $v100;
+        .container{
+            background-color: $white;
+            text-align: center;
+            border: 1px solid $darkblue;
+            margin: 5px;
+            width: $v50;
+        }
+    }
+}
