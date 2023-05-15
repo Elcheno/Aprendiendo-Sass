@@ -1,19 +1,130 @@
+//Colours
 $white: rgb(255, 255, 255);
 $lightblue: rgb(172, 168, 226);
 $darkblue: rgb(1, 1, 129);
+$green: #27c000;
+$red: #ff0000;
+$magenta: #ff00ff;
+$aqua: #00ffa7;
+$yellow: #ffd500;
+$brown-grey: #736767;
+$orange: #da6100;
+$colors-table-modulos: $green, $red, $magenta, $aqua, $yellow, $brown-grey, $orange;
+
+//Sizes
 $v100: 100%;
 $v50: 50%;
+$t500: 500px;
+$t250: 250px;
+$heading-font-sizes: 40px, 36px, 32px, 28px, 24px, 20px;
+
+
+@mixin centrado{
+    margin: auto;
+    text-align: center;
+}
+
+@mixin border{
+    border: 1px solid black;
+}
+
+@mixin separation-V{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+@mixin size($width, $height){
+    width: $width;
+    height: $height;
+}
+
+@function calc-width($breakpoint){
+    @if $breakpoint == "100" {
+        @return 100%;
+    } @else if $breakpoint == "75" {
+        @return 75%;
+    } @else if $breakpoint == "50" {
+        @return 50%;
+    } @else if $breakpoint == "25" {
+        @return 25%;
+    } @else {
+        @return 100%;
+    }
+}
 
 body{
     background-color: $lightblue;
     .wrapper{
+        $i: 1;
         width: $v100;
         .container{
             background-color: $white;
-            text-align: center;
             border: 1px solid $darkblue;
-            margin: 5px;
-            width: $v50;
+            @include centrado;
+            @include separation-V;
+
+            @while $i <= length($heading-font-sizes) {
+                h#{$i} {
+                    font-size: nth($heading-font-sizes, $i);
+                }
+                $i: $i + 1;
+            }
         }
+    }
+}
+
+.table-Modulos{
+    @include centrado;
+    @include separation-V;
+    border-collapse: collapse;
+    @include size($t500, $t250);
+
+    tr{
+        @include border;
+
+        td{
+            @include border;
+        }
+        td:nth-child(odd){
+            text-align: left;
+        }
+        td:nth-child(even){
+            text-align: right;
+        }
+    }
+
+    @for $i from 1 through length($colors-table-modulos){
+        tr:nth-child(#{$i}){
+            background-color: nth($colors-table-modulos, $i);
+            @if $i == 1{
+                td{
+                    text-align: center;
+                    font-size: 1.2em;
+                }
+            }
+        }
+    }
+
+}
+
+.wrapper{
+    .container:nth-child(1){
+        width: calc-width('100');
+    }
+
+    .container:nth-child(2){
+        width: calc-width('75');
+    }
+
+    .container:nth-child(3){
+        width: calc-width('50');
+    }
+
+    .container:nth-child(4){
+        width: calc-width('25');
+    }
+
+    .container:nth-child(5){
+        width: calc-width('50');
     }
 }

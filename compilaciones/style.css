@@ -6,9 +6,91 @@ body .wrapper {
 }
 body .wrapper .container {
   background-color: rgb(255, 255, 255);
-  text-align: center;
   border: 1px solid rgb(1, 1, 129);
-  margin: 5px;
+  margin: auto;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+body .wrapper .container h1 {
+  font-size: 40px;
+}
+body .wrapper .container h2 {
+  font-size: 36px;
+}
+body .wrapper .container h3 {
+  font-size: 32px;
+}
+body .wrapper .container h4 {
+  font-size: 28px;
+}
+body .wrapper .container h5 {
+  font-size: 24px;
+}
+body .wrapper .container h6 {
+  font-size: 20px;
+}
+
+.table-Modulos {
+  margin: auto;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-collapse: collapse;
+  width: 500px;
+  height: 250px;
+}
+.table-Modulos tr {
+  border: 1px solid black;
+}
+.table-Modulos tr td {
+  border: 1px solid black;
+}
+.table-Modulos tr td:nth-child(odd) {
+  text-align: left;
+}
+.table-Modulos tr td:nth-child(even) {
+  text-align: right;
+}
+.table-Modulos tr:nth-child(1) {
+  background-color: #27c000;
+}
+.table-Modulos tr:nth-child(1) td {
+  text-align: center;
+  font-size: 1.2em;
+}
+.table-Modulos tr:nth-child(2) {
+  background-color: #ff0000;
+}
+.table-Modulos tr:nth-child(3) {
+  background-color: #ff00ff;
+}
+.table-Modulos tr:nth-child(4) {
+  background-color: #00ffa7;
+}
+.table-Modulos tr:nth-child(5) {
+  background-color: #ffd500;
+}
+.table-Modulos tr:nth-child(6) {
+  background-color: #736767;
+}
+.table-Modulos tr:nth-child(7) {
+  background-color: #da6100;
+}
+
+.wrapper .container:nth-child(1) {
+  width: 100%;
+}
+.wrapper .container:nth-child(2) {
+  width: 75%;
+}
+.wrapper .container:nth-child(3) {
+  width: 50%;
+}
+.wrapper .container:nth-child(4) {
+  width: 25%;
+}
+.wrapper .container:nth-child(5) {
   width: 50%;
 }
 
