@@ -1,0 +1,26 @@
+@mixin centrado-block{
+  margin: auto;
+}
+
+@mixin centrado{
+  text-align: center;
+}
+
+@mixin border{
+  border: 1px solid black;
+}
+
+@mixin separation-V{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+@mixin separation-H{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+@mixin size($width, $height){
+  width: $width;
+  height: $height;
+}
